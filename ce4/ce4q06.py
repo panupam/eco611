@@ -9,8 +9,10 @@ for i in range(A.shape[1]):
         for j in range(i):
             if z[:,j].dot(z[:,j])>0:
                 z[:,i]=z[:,i]- z[:,i].dot(z[:,j])*z[:,j]/(z[:,j].dot(z[:,j]))
+    else:
+        z[:,i]=A[:,i]
 
 z_norm=np.array([np.sqrt(z[:,i].dot(z[:,i])) for i in range(A.shape[1])])
 z[:,z_norm>0]=z[:,z_norm>0]/z_norm[z_norm>0]
 print("Maximal set of linearly independent colums are \n", A[:,z_norm>0])
-print("Orthonormal basis for colum space of A is",z)
+print("Orthonormal basis for colum space of A is\n",z[:,z_norm>0])
