@@ -1,11 +1,10 @@
 import numpy as np 
 import matplotlib.pyplot as plt
-#not correct
-F1= lambda n,x,c : (x*(n+1)+(-x)**(n+1))/(2*n)-c-0.5
+F1= lambda n,x,c : (x*(n+1)+(-x)**(n+1))/(2*n)-c+0.5
 F2=lambda n,x,c: 0.5-c+(x*(n+1)-(x)**(n+1))/(2*n)
 f=lambda n,x: (n+1)*(1-np.abs(x)**n)/(2*n)
 
-n=2
+n=10
 u=np.random.rand(1000)
 X=np.zeros(1000)
 for i in range(1000):
