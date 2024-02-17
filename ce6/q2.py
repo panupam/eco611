@@ -17,6 +17,7 @@ for a in np.arange(-1.9,2.0,0.1):
             count+=1
         else:
             d=-g(H,x)
+            count+=1
     
     l.append((a,count))
 z=np.array(l)
