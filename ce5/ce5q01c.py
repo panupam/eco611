@@ -1,4 +1,5 @@
 import numpy as np 
+import matplotlib.pyplot as plt
 
 p,n=input("Enter positive and negative starting point for x^1/3-e^-x^2:").split()
 p,n=float(p),float(n)
