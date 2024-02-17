@@ -13,18 +13,16 @@ for i in range(100):
         x_p=x.copy()
         x=x-((g(A,c,x).dot(d))/(d.dot(A.dot(d))))*d
         #print(x)
-        if np.linalg.norm(g(A,c,x))<1e-6:
-            break
         if count%5<4 :
             d=-g(A,c,x) + (g(A,c,x).dot(g(A,c,x))/ g(A,c,x_p).dot(g(A,c,x_p))) *d
             count+=1
         else:
             d=-g(A,c,x)
-            z=True
+            
             count+=1
         
-    if z:
-        print("No, solution doesn't converge in 5 step for",A,c,count)
+    if count>5:
+        print("No, solution doesn't converge in 5 step for A,c \n",A,c,"\nTook",count,"Steps")
         z1=True
         
 
